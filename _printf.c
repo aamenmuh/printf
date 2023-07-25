@@ -58,7 +58,7 @@ int _printf(char * format, ...)
 				case 'R':
 				{
 					s = va_arg(ap, char *);
-					count += printConverted(CaeserCipher(s, 13));
+					count += printConverted(CaeserCipher(s, 13), len);
 					break;
 				}
 				case 'd':
