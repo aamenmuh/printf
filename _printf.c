@@ -49,6 +49,12 @@ int _printf(char * format, ...)
 					count += printConverted(convertStringtoASCii(s), len);
 					break;
 				}
+				case 'r':
+				{
+					s = va_arg(ap, char *);
+					count += printConverted(reverseString(s), len);
+					break;
+				}
 				case 'd':
 				case 'i':
 				{
