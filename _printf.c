@@ -65,6 +65,16 @@ int _printf(char * format, ...)
 					count += len;
 					break;
 				}
+				case 'b':
+				{
+					b = va_arg(ap, int);
+					s = toBinary(b);
+					while (s[len] != '\0')
+						len++;
+					write(1, s, len);
+					count += len;
+					break;
+				}
 				case '%':
 				{
 					c = '%';
