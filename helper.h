@@ -7,4 +7,5 @@ char *unsignedToStr(unsigned int num);
 char *toAnyBase(int num, int base, char c);
 int printConverted(char *str, int len);
 char *convertStringtoASCii(char *str);
+char *reverseString(char *str);
 #endif
