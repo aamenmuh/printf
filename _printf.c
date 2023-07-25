@@ -77,6 +77,20 @@ int _printf(char * format, ...)
 					count += len;
 					break;
 				}
+				case 'x':
+				case 'X':
+				{
+					d = va_arg(ap, int);
+					if (*format == 'x')
+						s = toHex(d, 'a');
+					else
+						s = toHex(d, 'A');
+					while (s[len] != '\0')
+						len++;
+					write(1, s, len);
+					count += len;
+					break;
+				}
 				case '%':
 				{
 					c = '%';
