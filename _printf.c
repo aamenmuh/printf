@@ -82,9 +82,19 @@ int _printf(char * format, ...)
 				{
 					d = va_arg(ap, int);
 					if (*format == 'x')
-						s = toHex(d, 'a');
+						s = toAnyBase(d,16 ,'a');
 					else
-						s = toHex(d, 'A');
+						s = toAnyBase(d,16 ,'A');
+					while (s[len] != '\0')
+						len++;
+					write(1, s, len);
+					count += len;
+					break;
+				}
+			case 'o':
+				{
+					d = va_arg(ap, int);
+					s = toAnyBase(d, 8, 'A');
 					while (s[len] != '\0')
 						len++;
 					write(1, s, len);
