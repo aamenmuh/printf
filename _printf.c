@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "main.h"
+#include "helper.h"
 /**
  * _printf - prints
  * @format: format specifier
@@ -79,5 +79,5 @@ int _printf(char * format, ...)
 		}
 		format++;
 	}
-	return count;
+	return (count);
 }
