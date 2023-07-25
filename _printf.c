@@ -15,6 +15,7 @@ int _printf(char * format, ...)
 	va_list ap;
 	char c, *s;
 	int d, count, len;
+	unsigned int b;
 	len = 0;
 	count = 0;
 	
