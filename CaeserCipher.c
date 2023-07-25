@@ -18,7 +18,8 @@ char *CaeserCipher(char *str, int shift)
 		i++;
 	}
 	s = malloc((length + 1) * sizeof(char));
-	i = 0;
+	if (s == NULL)
+		return (s);
 	for (i = 0; i < length; i++)
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
