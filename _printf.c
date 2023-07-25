@@ -69,7 +69,7 @@ int _printf(char * format, ...)
 						s = toAnyBase(d,16 ,'a');
 					else
 						s = toAnyBase(d,16 ,'A');
-					count += (s, len);
+					count += printConverted(s, len);
 					break;
 				}
 			case 'o':
