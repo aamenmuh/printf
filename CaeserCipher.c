@@ -26,6 +26,8 @@ char *CaeserCipher(char *str, int shift)
 			s[i] = (str[i] - 'A' + shift) % 26 + 'A';
 		else if (str[i] >= 'a' && str[i] <= 'z')
 			s[i] = (str[i] - 'a' + shift) % 26 + 'a';
+		else
+			s[i] = str[i];
 	}
 	return (s);
 }
