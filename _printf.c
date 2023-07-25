@@ -55,7 +55,7 @@ int _printf(char * format, ...)
 					count += len;
 					break;
 				}
-			case 'i':
+				case 'i':
 				{
 					d = va_arg(ap, int);
 					s = toString(d);
