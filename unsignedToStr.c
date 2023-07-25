@@ -11,13 +11,13 @@
  *
  * Return: returns string rep
  */
-char *unsignedToStr(int num){
+char *unsignedToStr(unsigned int num){
 	int length;
 	int i;
 	char *str;
 	length = 0;
 
-	if (num > -1)
+	if ((int)num > -1)
 		return (toString(num));
 	num = MAX_UINT + num + 1;
 	length = 11;
