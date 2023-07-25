@@ -39,42 +39,26 @@ int _printf(char * format, ...)
 				}
 				case 's':
 				{
-					s = va_arg(ap, char *);
-					while (s[len] != '\0')
-						len++;
-					write(1, s, len);
-					count += len;
+					count += printConverted(s, len);
 					break;
 				}
 				case 'd':
 				case 'i':
 				{
 					d = va_arg(ap, int);
-					s = toString(d);
-					while (s[len] != '\0')
-						len++;
-					write(1, s, len);
-					count += len;
+					count += printConverted(toString(d), len);
 					break;
 				}
 				case 'u':
 				{
 					b = va_arg(ap, int);
-					s = unsignedToStr(b);
-					while (s[len] != '\0')
-						len++;
-					write(1, s, len);
-					count += len;
+					count += printConverted(unsignedToStr(b), len);
 					break;
 				}
 				case 'b':
 				{
 					b = va_arg(ap, int);
-					s = toBinary(b);
-					while (s[len] != '\0')
-						len++;
-					write(1, s, len);
-					count += len;
+					count += printConverted(toBinary(b), len);
 					break;
 				}
 				case 'x':
@@ -85,20 +69,13 @@ int _printf(char * format, ...)
 						s = toAnyBase(d,16 ,'a');
 					else
 						s = toAnyBase(d,16 ,'A');
-					while (s[len] != '\0')
-						len++;
-					write(1, s, len);
-					count += len;
+					count += (s, len);
 					break;
 				}
 			case 'o':
 				{
 					d = va_arg(ap, int);
-					s = toAnyBase(d, 8, 'A');
-					while (s[len] != '\0')
-						len++;
-					write(1, s, len);
-					count += len;
+					count += printConverted(toAnyBase(d, 8, 'a'), len);
 					break;
 				}
 				case '%':
