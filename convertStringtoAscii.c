@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "helper.h"
 /**
  * convertStringtoASCii - allow only printable chars
  * @str: string to be converted
