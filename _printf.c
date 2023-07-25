@@ -39,7 +39,14 @@ int _printf(char * format, ...)
 				}
 				case 's':
 				{
+					s = va_arg(ap, char *);
 					count += printConverted(s, len);
+					break;
+				}
+				case 'S':
+				{
+					s = va_arg(ap, char *);
+					count += printConverted(convertStringtoASCii(s), len);
 					break;
 				}
 				case 'd':
