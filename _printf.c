@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+/**
+ * _printf - prints
+ * @format: format specifier
+ *
+ * Return: returns number of printed characters
+ */
 int _printf(char * format, ...)
 {
     va_list ap;
@@ -8,7 +14,7 @@ int _printf(char * format, ...)
     int count, len;
     count = 0;
 	len = 0;
-    
+
     va_start(ap, format);
     while (*format != '\0')
     {
@@ -49,5 +55,5 @@ int _printf(char * format, ...)
         }
         format++;
     }
-    return count;
+    return (count);
 }
