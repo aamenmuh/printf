@@ -55,6 +55,12 @@ int _printf(char * format, ...)
 					count += printConverted(reverseString(s), len);
 					break;
 				}
+				case 'R':
+				{
+					s = va_arg(ap, char *);
+					count += printConverted(CaeserCipher(s, 13));
+					break;
+				}
 				case 'd':
 				case 'i':
 				{
