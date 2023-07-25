@@ -47,15 +47,6 @@ int _printf(char * format, ...)
 					break;
 				}
 				case 'd':
-				{
-					d = va_arg(ap, int);
-					s = toString(d);
-					while (s[len] != '\0')
-						len++;
-					write(1, s, len);
-					count += len;
-					break;
-				}
 				case 'i':
 				{
 					d = va_arg(ap, int);
