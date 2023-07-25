@@ -11,7 +11,7 @@
  *
  * Return: returns string rep
  */
-char *unsignedToStr(unsigned int num){
+char *unsignedToStr(int num){
 	int length;
 	int i;
 	char *str;
