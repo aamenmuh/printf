@@ -5,4 +5,5 @@ char *toString(int num);
 char *toBinary(unsigned int num);
 char *unsignedToStr(unsigned int num);
 char *toAnyBase(int num, int base, char c);
+int printConverted(char *str, int len);
 #endif
