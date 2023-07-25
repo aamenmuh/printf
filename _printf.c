@@ -14,7 +14,7 @@ int _printf(char * format, ...)
 {
 	va_list ap;
 	char c, *s;
-	int d, count, len, digits;
+	int d, count, len;
 	digits = 0;
 	len = 0;
 	count = 0;
