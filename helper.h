@@ -4,4 +4,5 @@ int countDigits(int num);
 char *toString(int num);
 char *toBinary(unsigned int num);
 char *unsignedToStr(int num);
+char *toHex(int num, char base);
 #endif
