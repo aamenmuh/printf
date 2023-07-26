@@ -11,7 +11,7 @@
  *
  * Return: returns number of printed characters
  */
-int _printf(char * format, ...)
+int _printf(char *format, ...)
 {
 	va_list ap;
 	char c, *s;
@@ -33,6 +33,10 @@ int _printf(char * format, ...)
 		}
 		else{
 			format++;
+			if (*format == '\0')
+			{
+				break;
+			}
 			switch(*format){
 				case 'c':
 				{
