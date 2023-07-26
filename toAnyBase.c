@@ -18,7 +18,7 @@ char *toAnyBase(int num, int base, char c)
 	char *str;
 	int currentValue;
 	if (num == 0)
-		return "0";
+		return strdup("0");
 	length = 8;
 	str = (char*)malloc((length + 1) * sizeof(char));
 	if (str == NULL)

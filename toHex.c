@@ -18,9 +18,13 @@ char *toHex(int num, char base)
 	int currentValue;
 
 	if (num == 0)
-		return ("0");
+        return strdup("0");
+
+    if (base != 'a' && base != 'A')
+        return NULL;
+
 	length = 8;
-	str = (char*)malloc((length + 1) * sizeof(char));
+	str = (char *)malloc((length + 1) * sizeof(char));
 	if (str == NULL)
 		return (str);
 	i = length - 1;

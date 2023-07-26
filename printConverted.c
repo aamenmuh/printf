@@ -8,8 +8,11 @@
  */
 int printConverted(char *str, int len)
 {
-	while (str[len] != '\0')
-		len++;
-	write(1, str, len);
-	return (len);
+	int length = len;
+
+	while (str[length] != '\0')
+		length++;
+
+	write(1, &str[len], length - len);
+	return (length - len);
 }

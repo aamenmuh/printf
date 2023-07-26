@@ -13,11 +13,13 @@ char *toBinary(unsigned int num)
 	char *str;
 
 	if (num == 0)
-		return "0";
+		return strdup("0");
+
 	length = countDigits(num);
-	str = (char*)malloc(length * sizeof(char));
+	str = (char *)malloc((length + 1) * sizeof(char));
 	if (str == NULL)
 		return (str);
+
 	i = length - 1;
 	str[i--] = '\0';
 	while (num != 0)

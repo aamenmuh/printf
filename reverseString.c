@@ -7,7 +7,7 @@
  */
 char *reverseString(char *str)
 {
-	int i, length;
+	int i, length = 0;
 	char *s;
 	i = 0;
 
@@ -23,5 +23,6 @@ char *reverseString(char *str)
 	{
 		s[i] = str[length - i - 1];
 	}
+	s[i] = '\0';
 	return s;
 }

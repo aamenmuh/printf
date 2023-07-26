@@ -8,7 +8,7 @@
  */
 char *CaeserCipher(char *str, int shift)
 {
-	int i, length;
+	int i, length = 0;
 	char *s;
 
 	i = 0;
@@ -29,5 +29,6 @@ char *CaeserCipher(char *str, int shift)
 		else
 			s[i] = str[i];
 	}
+	s[i] = '\0';
 	return (s);
 }

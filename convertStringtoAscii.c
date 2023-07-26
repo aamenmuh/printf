@@ -18,10 +18,19 @@ char *convertStringtoASCii(char *str)
 	j = 0;
 
 	buffer = malloc(3 * sizeof(char));
+	if (!buffer)
+	{
+		return (NULL);
+	}
 	buffer[0] = '0';
 	buffer[1] = '0';
 	buffer[2] = '\0';
-	s = malloc (15 *sizeof(char));
+	s = malloc (15 * sizeof(char));
+	if (!s)
+	{
+		free(buffer);
+		return (NULL);
+	}
 	while (str[i] != '\0')
 	{
 		if (!(str[i] > 31 && str[i] < 127))
@@ -44,5 +53,7 @@ char *convertStringtoASCii(char *str)
 		}
 		i++;
 	}
+	s[j] = '\0';
+	free(buffer);
 	return (s);
 }

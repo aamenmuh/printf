@@ -17,11 +17,12 @@ char *unsignedToStr(unsigned int num){
 	char *str;
 	length = 0;
 
-	if ((int)num > -1)
-		return (toString(num));
+	if (num <= INT_MAX)
+        return toString(num);
+
 	num = MAX_UINT + num + 1;
 	length = 11;
-	str = (char*)malloc(length * sizeof(char));
+	str = (char*)malloc((length + 1) * sizeof(char));
 	if (str == NULL)
 		return (str);
 	i = length - 1;

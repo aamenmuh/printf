@@ -31,7 +31,8 @@ int _printf(char *format, ...)
 		write(1, format, 1);
 		count++;
 		}
-		else{
+		else
+		{
 			format++;
 			if (*format == '\0')
 			{

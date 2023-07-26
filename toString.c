@@ -12,7 +12,7 @@
  */
 char *toString(int num)
 {
-	int length, i;
+	int length = 0, i;
 	char *str;
 	int isNegative;
 	isNegative = 0;
@@ -28,9 +28,10 @@ char *toString(int num)
 		isNegative = 1;
 		num = -1 * num;
 	}
-	str = (char*)malloc(length * sizeof(char));
+	str = (char *)malloc(length * sizeof(char));
 	if (str == NULL)
 		return (str);
+
 	i = length - 1;
 	str[i--] = '\0';
 	while (num != 0)
