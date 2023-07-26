@@ -18,7 +18,7 @@ char *toBinary(unsigned int num)
 	char *str;
 
 	if (num == 0)
-		return strdup("0");
+		return (strdup("0"));
 
 	length = countDigits(num);
 	str = (char *)malloc((length + 1) * sizeof(char));

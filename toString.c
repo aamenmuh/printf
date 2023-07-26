@@ -17,12 +17,13 @@ char *toString(int num)
 	int length = 0, i;
 	char *str;
 	int isNegative;
+
 	isNegative = 0;
 
 	length = countDigits(num);
 	if (num == 0)
 	{
-		return "0";
+		return (strdup("0"));
 	}
 	if (num < 0)
 	{

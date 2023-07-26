@@ -39,92 +39,93 @@ int _printf(char *format, ...)
 			{
 				break;
 			}
-			switch(*format){
-				case 'c':
-				{
-					c = (char)va_arg(ap, int);
-					write(1, &c, 1);
-					count++;
-					break;
-				}
-				case 's':
-				{
-					s = va_arg(ap, char *);
-					if (s == NULL)
-						s = "(null)";
-					count += printConverted(s, len);
-					break;
-				}
-				case 'S':
-				{
-					s = va_arg(ap, char *);
-					count += printConverted(convertStringtoASCii(s), len);
-					break;
-				}
-				case 'r':
-				{
-					s = va_arg(ap, char *);
-					count += printConverted(reverseString(s), len);
-					break;
-				}
-				case 'R':
-				{
-					s = va_arg(ap, char *);
-					count += printConverted(CaeserCipher(s, 13), len);
-					break;
-				}
-				case 'd':
-				case 'i':
-				{
-					d = va_arg(ap, int);
-					count += printConverted(toString(d), len);
-					break;
-				}
-				case 'u':
-				{
-					b = va_arg(ap, int);
-					count += printConverted(unsignedToStr(b), len);
-					break;
-				}
-				case 'b':
-				{
-					b = va_arg(ap, int);
-					count += printConverted(toBinary(b), len);
-					break;
-				}
-				case 'x':
-				case 'X':
-				{
-					d = va_arg(ap, int);
-					if (*format == 'x')
-						s = toAnyBase(d,16 ,'a');
-					else
-						s = toAnyBase(d,16 ,'A');
-					count += printConverted(s, len);
-					break;
-				}
+			switch (*format)
+			{
+			case 'c':
+			{
+				c = (char)va_arg(ap, int);
+				write(1, &c, 1);
+				count++;
+				break;
+			}
+			case 's':
+			{
+				s = va_arg(ap, char *);
+				if (s == NULL)
+					s = "(null)";
+				count += printConverted(s, len);
+				break;
+			}
+			case 'S':
+			{
+				s = va_arg(ap, char *);
+				count += printConverted(convertStringtoASCii(s), len);
+				break;
+			}
+			case 'r':
+			{
+				s = va_arg(ap, char *);
+				count += printConverted(reverseString(s), len);
+				break;
+			}
+			case 'R':
+			{
+				s = va_arg(ap, char *);
+				count += printConverted(CaeserCipher(s, 13), len);
+				break;
+			}
+			case 'd':
+			case 'i':
+			{
+				d = va_arg(ap, int);
+				count += printConverted(toString(d), len);
+				break;
+			}
+			case 'u':
+			{
+				b = va_arg(ap, int);
+				count += printConverted(unsignedToStr(b), len);
+				break;
+			}
+			case 'b':
+			{
+				b = va_arg(ap, int);
+				count += printConverted(toBinary(b), len);
+				break;
+			}
+			case 'x':
+			case 'X':
+			{
+				d = va_arg(ap, int);
+				if (*format == 'x')
+					s = toAnyBase(d, 16, 'a');
+				else
+					s = toAnyBase(d, 16, 'A');
+				count += printConverted(s, len);
+				break;
+			}
 			case 'o':
-				{
-					d = va_arg(ap, int);
-					count += printConverted(toAnyBase(d, 8, 'a'), len);
-					break;
-				}
-				case 'p':
-				{
-					ptr =  va_arg(ap, void *);
-					count += printConverted(toAnyBase((uintptr_t) ptr, 16, 'a'), len);
-					break;
+			{
+				d = va_arg(ap, int);
+				count += printConverted(toAnyBase(d, 8, 'a'), len);
+				break;
+			}
+			case 'p':
+			{
+				ptr =  va_arg(ap, void *);
+				count += printConverted(toAnyBase((uintptr_t) ptr, 16, 'a'), len);
+				break;
 
-				}
-				case '%':
-				{
-					c = '%';
-					write (1, &c, 1);
-					count++;
-					break;
-				}
-				default:
-					break;
+			}
+			case '%':
+			{
+				c = '%';
+				write(1, &c, 1);
+				count++;
+				break;
+			}
+			default:
+				break;
 			}
 			len = 0;
 		}

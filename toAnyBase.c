@@ -18,10 +18,11 @@ char *toAnyBase(int num, int base, char c)
 	int length, i;
 	char *str;
 	int currentValue;
+
 	if (num == 0)
-		return strdup("0");
+		return (strdup("0"));
 	length = 8;
-	str = (char*)malloc((length + 1) * sizeof(char));
+	str = (char *)malloc((length + 1) * sizeof(char));
 	if (str == NULL)
 		return (str);
 	i = length - 1;

@@ -14,19 +14,15 @@
 char *convertStringtoASCii(char *str)
 {
 	char *s, *buffer;
-	int i, j;
-	i = 0;
-	j = 0;
+	int i = 0, j = 0;
 
 	buffer = malloc(3 * sizeof(char));
 	if (!buffer)
-	{
 		return (NULL);
-	}
 	buffer[0] = '0';
 	buffer[1] = '0';
 	buffer[2] = '\0';
-	s = malloc (15 * sizeof(char));
+	s = malloc(15 * sizeof(char));
 	if (!s)
 	{
 		free(buffer);
