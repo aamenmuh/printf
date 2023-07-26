@@ -1,4 +1,9 @@
+#include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include "helper.h"
 /**
  * printConverted - prints strings
  * @str: string

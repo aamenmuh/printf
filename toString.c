@@ -3,7 +3,9 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "main.h"
+#include <limits.h>
+#include "helper.h"
+
 /**
  * toString - converts int to string
  * @num: the number

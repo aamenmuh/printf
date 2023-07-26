@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #define MAX_UINT (4294967295)
+#include <limits.h>
 #include "helper.h"
 /**
  * unsignedToStr - converts unsigned to str

@@ -1,6 +1,11 @@
 #include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
+#include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "helper.h"
+
 /**
  * toBinary - converts unsigned int to binary
  * @num: the number
