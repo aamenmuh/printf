@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include "helper.h"
 /**
  * _printf - prints
@@ -14,7 +15,7 @@ int _printf(char * format, ...)
 {
 	va_list ap;
 	char c, *s;
-	int d, count, len;
+	int d, count, len, addressSize;
 	unsigned int b;
 	len = 0;
 	count = 0;
@@ -101,7 +102,7 @@ int _printf(char * format, ...)
 				case 'p':
 				{
 					ptr =  va_arg(ap, void *);
-					count += printConverted(toAnyBase((int) ptr, 16, 'a'), len);
+					count += printConverted(toAnyBase((uintptr_t) ptr, 16, 'a'), len);
 					break;
 
 				}
