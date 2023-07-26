@@ -42,6 +42,8 @@ int _printf(char * format, ...)
 				case 's':
 				{
 					s = va_arg(ap, char *);
+					if (s == NULL)
+						s = "(null)";
 					count += printConverted(s, len);
 					break;
 				}
