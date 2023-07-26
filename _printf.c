@@ -15,12 +15,12 @@ int _printf(char * format, ...)
 {
 	va_list ap;
 	char c, *s;
-	int d, count, len, addressSize;
+	int d, count, len;
 	unsigned int b;
-	len = 0;
-	count = 0;
 	void *ptr;
 
+	len = 0;
+	count = 0;
 	va_start(ap, format);
 	while (*format != '\0')
 	{
