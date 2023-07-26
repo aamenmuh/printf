@@ -21,6 +21,8 @@ int _printf(char * format, ...)
 
 	len = 0;
 	count = 0;
+	if (format == NULL)
+		return (0);
 	va_start(ap, format);
 	while (*format != '\0')
 	{
@@ -122,5 +124,6 @@ int _printf(char * format, ...)
 		}
 		format++;
 	}
+	va_end(ap);
 	return (count);
 }
