@@ -18,7 +18,8 @@ int _printf(char * format, ...)
 	unsigned int b;
 	len = 0;
 	count = 0;
-	
+	void *ptr;
+
 	va_start(ap, format);
 	while (*format != '\0')
 	{
@@ -96,6 +97,13 @@ int _printf(char * format, ...)
 					d = va_arg(ap, int);
 					count += printConverted(toAnyBase(d, 8, 'a'), len);
 					break;
+				}
+				case 'p':
+				{
+					ptr =  va_arg(ap, void *);
+					count += printConverted(toAnyBase((int) ptr, 16, 'a'), len);
+					break;
+
 				}
 				case '%':
 				{
