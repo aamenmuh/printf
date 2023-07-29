@@ -13,7 +13,7 @@
  *
  * Return: returns converted number
  */
-char *toAnyBase(long unsigned int num, int base, char c)
+char *toAnyBase(unsigned int num, int base, char c)
 {
 	int length, i;
 	char *str;
