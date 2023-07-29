@@ -121,7 +121,7 @@ int _printf(char *format, ...)
 				else
 				{
 					write(1, "(nil)", 5);
-					count += 4;
+					count += 5;
 				}
 				break;
 				break;
