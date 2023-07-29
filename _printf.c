@@ -113,7 +113,7 @@ int _printf(char *format, ...)
 			case 'p':
 			{
 				ptr =  va_arg(ap, void *);
-				count += printConverted(toAnyBase((uintptr_t) ptr, 16, 'a'), len);
+				count += printConverted(toHex((uintptr_t) ptr, 'a'), len);
 				break;
 
 			}
