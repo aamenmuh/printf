@@ -116,7 +116,7 @@ int _printf(char *format, ...)
 				if (ptr != NULL)
 				{
 				write(1, "0x", 2);
-				count += printConverted(toHex((uintptr_t) ptr, 'a'), len);
+				count += 2 + printConverted(toHex((uintptr_t) ptr, 'a'), len);
 				}
 				else
 				{
