@@ -113,7 +113,17 @@ int _printf(char *format, ...)
 			case 'p':
 			{
 				ptr =  va_arg(ap, void *);
+				if (ptr != NULL)
+				{
+				write(1, "0x", 2);
 				count += printConverted(toHex((uintptr_t) ptr, 'a'), len);
+				}
+				else
+				{
+					write(1, "(nil)", 5);
+					count += 4;
+				}
+				break;
 				break;
 
 			}
