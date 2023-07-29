@@ -12,7 +12,7 @@
  *
  * Return: Hex rep of num
  */
-char *toHex(int num, char base)
+char *toHex(long unsigned int num, char base)
 {
 	int length, i;
 	char *str;
